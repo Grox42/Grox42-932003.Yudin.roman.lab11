@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "AccessServiceDirectly";
+    @inject Lab_11.Services.ICalcService Calc;
+}
+
+<h1>AccessServiceDirectly</h1>
+<div><b>Rand Value First: @Calc._firstNum</b></div>
+<div><b>Rand Value Second: @Calc._secondNum</b></div>
+
+<div><b>Add:</b></div>
+@Calc._firstNum + @Calc._secondNum = @Calc.Sum()
+
+<div><b>Sub:</b></div>
+@Calc._firstNum - @Calc._secondNum = @Calc.Sub()
+
+<div><b>Mult:</b></div>
+@Calc._firstNum * @Calc._secondNum = @Calc.Mul()
+
+<div><b>Div:</b></div>
+@Calc._firstNum / @Calc._secondNum =
+    @if (Calc.Div() == -1) {
+            @: Infinity
+        }
+        else {
+            @Calc.Div()
+        }

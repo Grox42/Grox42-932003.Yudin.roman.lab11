@@ -1,0 +1,27 @@
+@model Lab_11.Models.ResModel
+
+@{
+    ViewData["Title"] = "PassUsingModel";
+}
+
+<h1>PassUsingModel</h1>
+<div><b>Rand Value First : @Model.firstNum</b></div>
+<div><b>Rand Value Second : @Model.secondNum</b></div>
+
+<div><b>Add:</b></div>
+@Model.firstNum + @Model.secondNum = @Model.sumResult
+
+<div><b>Sub:</b></div>
+@Model.firstNum - @Model.secondNum = @Model.subResult
+
+<div><b>Mult:</b></div>
+@Model.firstNum * @Model.secondNum = @Model.mulResult
+
+<div><b>Div:</b></div>
+@Model.firstNum / @Model.secondNum =
+    @if (Model.divResult == -1) {
+        @: Infinity
+    }
+    else {
+        @Model.divResult
+    }

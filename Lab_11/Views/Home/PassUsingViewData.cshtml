@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "PassUsingViewData";
+    var data = ViewData["data"] as Lab_11.Models.ResModel;
+}
+
+<h1>PassUsingViewData</h1>
+<div><b>Rand Value First : @data.firstNum</b></div>
+<div><b>Rand Value Second : @data.secondNum</b></div>
+
+<div><b>Add:</b></div>
+@data.firstNum + @data.secondNum = @data.sumResult
+
+<div><b>Sub:</b></div>
+@data.firstNum - @data.secondNum = @data.subResult
+
+<div><b>Mult:</b></div>
+@data.firstNum * @data.secondNum = @data.mulResult
+
+<div><b>Div:</b></div>
+@data.firstNum / @data.secondNum =
+    @if (data.divResult == -1) {
+            @: Infinity
+        }
+        else {
+            @data.divResult
+        }
